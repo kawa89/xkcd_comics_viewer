@@ -1,9 +1,13 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:logger/logger.dart';
+import 'package:xkcd_comics_viewer/network/service/xkcd_rest_client.dart';
 import 'package:xkcd_comics_viewer/screens/home/home_screen.dart';
 import 'package:xkcd_comics_viewer/screens/splash/splash_screen.dart';
 
 void main() {
+  XkcdRestClient(Dio()).getLatestComic().then((comic) => Logger().d(comic));
   runApp(XkcdComicsViewerApp());
 }
 
@@ -24,16 +28,15 @@ class XkcdComicsViewerApp extends StatelessWidget {
       ),
       initialRoute: XkcdComicsViewerApp.splashScreenRoute,
       onGenerateRoute: (settings) {
-        switch(settings.name) {
+        switch (settings.name) {
           case XkcdComicsViewerApp.splashScreenRoute:
             return MaterialPageRoute(builder: (_) => SplashScreen());
-            break;
           case XkcdComicsViewerApp.homeScreenRoute:
             return MaterialPageRoute(builder: (_) => HomeScreen());
-            break;
-          default: {
-            throw Exception('Route does not exist.');
-          }
+          default:
+            {
+              throw Exception('Route does not exist.');
+            }
         }
       },
     );

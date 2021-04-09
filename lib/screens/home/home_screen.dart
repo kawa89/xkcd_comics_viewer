@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:xkcd_comics_viewer/main.dart';
 
 class HomeScreen extends StatelessWidget {
   @override

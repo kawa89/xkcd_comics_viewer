@@ -7,7 +7,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
     var _minimalDelay = Future<dynamic>.delayed(const Duration(milliseconds: 2000));
@@ -15,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.wait<dynamic>([
       _minimalDelay,
     ]).then((value) {
-        Navigator.of(context).pushReplacementNamed(XkcdComicsViewerApp.homeScreenRoute);
+      Navigator.of(context).pushReplacementNamed(XkcdComicsViewerApp.homeScreenRoute);
     });
     super.initState();
   }
