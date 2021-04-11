@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kawa.xkcd_comics_viewer">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="xkcd_comics_viewer"
         android:icon="@mipmap/ic_launcher">

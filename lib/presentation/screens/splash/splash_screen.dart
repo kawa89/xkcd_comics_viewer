@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:xkcd_comics_viewer/main.dart';
 
+/// Widget that shows a splash screen. Here we can add our initial async tasks, that need to finish before showing the main screen.
 class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => _SplashScreenState();
@@ -9,7 +10,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    var _minimalDelay = Future<dynamic>.delayed(const Duration(milliseconds: 2000));
+    var _minimalDelay = Future<dynamic>.delayed(const Duration(milliseconds: 1500));
 
     Future.wait<dynamic>([
       _minimalDelay,
@@ -28,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Text(
             'xkcd comics viewer',
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.headline2,
+            style: Theme.of(context).textTheme.headline3,
           ),
         ),
       ),

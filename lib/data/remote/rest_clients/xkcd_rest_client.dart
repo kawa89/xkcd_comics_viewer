@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:xkcd_comics_viewer/network/model/xkcd_comic.dart';
+import 'package:xkcd_comics_viewer/data/remote/model/xkcd_comic.dart';
 
 part 'xkcd_rest_client.g.dart';
 
@@ -12,5 +12,5 @@ abstract class XkcdRestClient {
   Future<XkcdComic> getLatestComic();
 
   @GET("/{id}/info.0.json")
-  Future<XkcdComic> getComic(@Path("id") String id);
+  Future<XkcdComic> getComic(@Path("id") int id);
 }
