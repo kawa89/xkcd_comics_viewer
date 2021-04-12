@@ -6,10 +6,9 @@ part 'xkcd_comic.g.dart';
 class XkcdComic {
   int num;
   String title;
-  String alt;
   String img;
 
-  XkcdComic(this.num, this.title, this.alt, this.img);
+  XkcdComic(this.num, this.title, this.img);
 
   factory XkcdComic.fromJson(Map<String, dynamic> json) => _$XkcdComicFromJson(json);
 
@@ -17,6 +16,6 @@ class XkcdComic {
 
   @override
   String toString() {
-    return 'XkcdComic{num: $num, title: $title, alt: $alt, img: $img}';
+    return 'XkcdComic{num: $num, title: $title, img: $img}';
   }
 }
