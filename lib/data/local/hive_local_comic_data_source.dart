@@ -1,5 +1,4 @@
 import 'package:hive/hive.dart';
-import 'package:xkcd_comics_viewer/constants/hive_box_names.dart';
 import 'package:xkcd_comics_viewer/data/local/hive_comic_to_comic_mapper.dart';
 import 'package:xkcd_comics_viewer/data/local/local_comic_data_source.dart';
 import 'package:xkcd_comics_viewer/data/local/model/hive_comic.dart';
@@ -7,14 +6,10 @@ import 'package:xkcd_comics_viewer/domain/entity/comic.dart';
 
 /// Class that uses Hive to cache comics with a specific ID
 class HiveLocalComicDataSource implements LocalComicDataSource {
-  HiveLocalComicDataSource(this._hiveComicToComicMapper);
+  HiveLocalComicDataSource(this._hiveComicToComicMapper, this._box);
 
-  late final Box _box;
+  final Box _box;
   final HiveComicToComicMapper _hiveComicToComicMapper;
-
-  Future<void> init() async {
-    _box = await Hive.openBox<HiveComic>(HiveBoxNames.HIVE_COMIC_BOX);
-  }
 
   @override
   Future<Comic?> getComic(int id) async {

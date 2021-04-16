@@ -9,11 +9,17 @@ void main() {
   const mockImageUrl = "mock_imageUrl";
 
   group('XkcdComicToComicMapper', () {
+    // given to all
     final _sut = XkcdComicToComicMapper();
 
     test('Map HiveComic to Comic', () {
+      // given
       XkcdComic xkcdComic = XkcdComic(mockId, mockTitle, mockImageUrl);
+
+      // when
       Comic comic = _sut.map(xkcdComic);
+
+      // then
       expect(comic.title, mockTitle);
       expect(comic.id, mockId);
       expect(comic.imageUrl, mockImageUrl);

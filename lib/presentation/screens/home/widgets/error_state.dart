@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:xkcd_comics_viewer/generated/locale_keys.g.dart';
 
 /// Widget that displays an error message when there is an unexpected state of the application
 class ErrorState extends StatelessWidget {
@@ -11,7 +13,7 @@ class ErrorState extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Center(
-        child: Text("Error! This should never happen"),
+        child: Text(LocaleKeys.this_should_never_happen.tr()),
       ),
     );
   }

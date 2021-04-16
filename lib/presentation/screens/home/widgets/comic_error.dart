@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:xkcd_comics_viewer/generated/locale_keys.g.dart';
 
 /// Widget that displays an error message and a retry button
 class ComicError extends StatelessWidget {
@@ -19,14 +21,18 @@ class ComicError extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text("Error! $errorMessage"),
+            Text(
+              LocaleKeys.error.tr(
+                namedArgs: {'errorMessage': errorMessage},
+              ),
+            ),
             SizedBox(
               height: 12.0,
             ),
             OutlinedButton(
               onPressed: reloadComic,
               child: Text(
-                "Retry",
+                LocaleKeys.retry.tr(),
               ),
             ),
           ],

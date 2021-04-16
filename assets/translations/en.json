@@ -1,0 +1,6 @@
+{
+  "splash_intro_text": "xkcd comics viewer",
+  "error": "Error: {errorMessage}",
+  "retry": "Retry",
+  "this_should_never_happen": "Error! This should never happen"
+}

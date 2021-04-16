@@ -15,7 +15,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final ComicStore _latestComicStore = GetIt.I.get<ComicStore>(instanceName: GetItInstanceNames.LATEST_COMIC_STORE);
+  final ComicStore _latestComicStore = GetIt.I.get<ComicStore>(instanceName: GetItInstanceNames.XKCD_LATEST_COMIC_STORE);
 
   @override
   void initState() {

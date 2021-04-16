@@ -2,7 +2,7 @@ import 'package:logger/logger.dart';
 import 'package:mobx/mobx.dart';
 import 'package:xkcd_comics_viewer/domain/entity/comic.dart';
 import 'package:xkcd_comics_viewer/domain/store/comic_state.dart';
-import 'package:xkcd_comics_viewer/domain/use_case/get_comic_use_case.dart';
+import 'package:xkcd_comics_viewer/domain/use_cases/get_comic_use_case.dart';
 
 part 'comic_store.g.dart';
 

@@ -9,19 +9,30 @@ void main() {
   const mockImageUrl = "mock_imageUrl";
 
   group('HiveComicToComicMapper', () {
+    // given to all
     final _sut = HiveComicToComicMapper();
 
     test('Map HiveComic to Comic', () {
+      // given
       HiveComic hiveComic = HiveComic(title: mockTitle, id: mockId, imageUrl: mockImageUrl);
+
+      // when
       Comic comic = _sut.mapToComic(hiveComic);
+
+      // then
       expect(comic.title, mockTitle);
       expect(comic.id, mockId);
       expect(comic.imageUrl, mockImageUrl);
     });
 
     test('Map Comic to HiveComic', () {
+      // given
       Comic comic = Comic(title: mockTitle, id: mockId, imageUrl: mockImageUrl);
+
+      // when
       HiveComic hiveComic = _sut.mapToHiveComic(comic);
+
+      // then
       expect(hiveComic.title, mockTitle);
       expect(hiveComic.id, mockId);
       expect(hiveComic.imageUrl, mockImageUrl);
