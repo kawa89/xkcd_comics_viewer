@@ -7,8 +7,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:xkcd_comics_viewer/generated/locale_keys.g.dart';
 import 'package:xkcd_comics_viewer/presentation/screens/home/widgets/comic_error.dart';
 
-import '../../../commons/function_handler.dart';
-import '../../../commons/test_localization.dart';
+import '../../../../commons/function_handler.dart';
+import '../../../../commons/test_localization.dart';
 import 'comic_error_test.mocks.dart';
 
 @GenerateMocks([FunctionHandler])

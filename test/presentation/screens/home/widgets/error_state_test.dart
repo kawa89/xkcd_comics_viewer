@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:xkcd_comics_viewer/generated/locale_keys.g.dart';
 import 'package:xkcd_comics_viewer/presentation/screens/home/widgets/error_state.dart';
 
-import '../../../commons/test_localization.dart';
+import '../../../../commons/test_localization.dart';
 
 void main() async {
   SharedPreferences.setMockInitialValues({});

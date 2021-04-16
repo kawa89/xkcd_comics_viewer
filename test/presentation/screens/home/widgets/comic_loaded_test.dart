@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:xkcd_comics_viewer/domain/entity/comic.dart';
 import 'package:xkcd_comics_viewer/presentation/screens/home/widgets/comic_loaded.dart';
 
-import '../../../commons/test_localization.dart';
+import '../../../../commons/test_localization.dart';
 import 'comic_loaded_test.mocks.dart';
 
 @GenerateMocks([

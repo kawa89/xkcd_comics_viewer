@@ -12,8 +12,8 @@ import 'package:xkcd_comics_viewer/domain/use_cases/get_comic_use_case.dart';
 import 'package:xkcd_comics_viewer/presentation/screens/home/widgets/comic_list.dart';
 import 'package:xkcd_comics_viewer/presentation/screens/home/widgets/comic_tile.dart';
 
-import '../../../commons/function_handler.dart';
-import '../../../commons/test_localization.dart';
+import '../../../../commons/function_handler.dart';
+import '../../../../commons/test_localization.dart';
 import 'comic_list_test.mocks.dart';
 
 @GenerateMocks([
