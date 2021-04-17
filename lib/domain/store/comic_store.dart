@@ -22,9 +22,9 @@ abstract class _ComicStore with Store {
   load() async {
     comicState = ComicState.loading();
     try {
-      Comic? latestComic = await getComicUseCase.invoke();
-      if (latestComic != null) {
-        comicState = ComicState.loaded(latestComic);
+      Comic? comic = await getComicUseCase.invoke();
+      if (comic != null) {
+        comicState = ComicState.loaded(comic);
       } else {
         comicState = ComicState.error(LocaleKeys.something_went_wrong.tr());
       }
