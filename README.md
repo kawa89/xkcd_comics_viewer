@@ -8,11 +8,11 @@ response will contain the ID of the latest comic. To get previous comics, you ne
 .json)). As you can see, this is not a typical paginated API, so my approach is a bit different then the usual one, when you load 10 next items when you scroll
 close to the end of the list.
 
-The HomeScreen contains a MobX ComicStore, that loads the latest comic via the GetLatestComic use case. If the response is successful, a lazy list of comics is
-created, by using a `ListView.builder` approach. Each item in that list (comic tile) has its own independent ComicStore, that tries to load the comic information.
-If that response is successful, that single comic is presented to the user with it's title and ID.
+The HomeScreen contains a MobX [ComicStore](https://github.com/kawa89/xkcd_comics_viewer/blob/dev/lib/domain/store/comic_store.dart), that loads the latest comic via the [GetLatestComic](https://github.com/kawa89/xkcd_comics_viewer/blob/dev/lib/domain/use_cases/get_latest_comic.dart) use case. If the response is successful, a lazy list of comics is
+created, by using a `ListView.builder` approach. Each item in that list ([ComicTile](https://github.com/kawa89/xkcd_comics_viewer/blob/dev/lib/presentation/screens/home/widgets/comic_tile.dart)) has its own independent [ComicStore](https://github.com/kawa89/xkcd_comics_viewer/blob/dev/lib/domain/store/comic_store.dart), that tries to load the comic information.
+If that response is successful, that single comic is presented to the user with its title and ID.
 
-Error cases that are supported:
+## Error cases that are supported:
 | Error case  | UX solution |
 |---|---|
 | error while opening the app (AKA downloading the latest comic in HomeScreen)  |  Retry button |
@@ -22,13 +22,10 @@ Error cases that are supported:
 ## Screenshots and gifs
 |Scenario|Screenshot|gif|
 |-|-|-|
-|Normal usage||![normal usage screenshot](demo/screenshots/xkcd_normal_usage.png)|![normal usage gif](demo/gifs/xkcd_normal_usage.gif)|
-|Error while scrolling through the app||![Error while scrolling screenshot](demo/screenshots/xkcd_error_while_scrolling.png)|![Error while scrolling gif]
-(demo/gifs/xkcd_error_while_scrolling.gif)|
-|Error while opening the app||![Error while opening screenshot](demo/screenshots/xkcd_error_while_opening.png)|![Error while opening gif]
-(demo/gifs/xkcd_error_while_opening.gif)|
-|Error while loading the comic image||![Error while loading image screenshot](demo/screenshots/xkcd_error_while_loading_image.png)|![Error while loading image
-gif](demo/gifs/xkcd_error_while_loading_image.gif)|
+|Normal usage|![normal usage screenshot](demo/screenshots/xkcd_normal_usage.png)|![normal usage gif](demo/gifs/xkcd_normal_usage.gif)|
+|Error while scrolling through the app|![Error while scrolling screenshot](demo/screenshots/xkcd_error_while_scrolling.png)|![Error while scrolling gif](demo/gifs/xkcd_error_while_scrolling.gif)|
+|Error while opening the app|![Error while opening screenshot](demo/screenshots/xkcd_error_while_opening.png)|![Error while opening gif](demo/gifs/xkcd_error_while_opening.gif)|
+|Error while loading the comic image|![Error while loading image screenshot](demo/screenshots/xkcd_error_while_loading_image.png)|![Error while loading image gif](demo/gifs/xkcd_error_while_loading_image.gif)|
 
 ## Dependencies
 | Type  | Dependency name |
