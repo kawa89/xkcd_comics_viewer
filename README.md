@@ -23,8 +23,8 @@ If that response is successful, that single comic is presented to the user with 
 |Scenario|Screenshot|gif|
 |-|-|-|
 |Normal usage|![normal usage screenshot](demo/screenshots/xkcd_normal_usage.png)|![normal usage gif](demo/gifs/xkcd_normal_usage.gif)|
-|Error while scrolling through the app|![Error while scrolling screenshot](demo/screenshots/xkcd_error_while_scrolling.png)|![Error while scrolling gif](demo/gifs/xkcd_error_while_scrolling.gif)|
 |Error while opening the app|![Error while opening screenshot](demo/screenshots/xkcd_error_while_opening.png)|![Error while opening gif](demo/gifs/xkcd_error_while_opening.gif)|
+|Error while scrolling through the app|![Error while scrolling screenshot](demo/screenshots/xkcd_error_while_scrolling.png)|![Error while scrolling gif](demo/gifs/xkcd_error_while_scrolling.gif)|
 |Error while loading the comic image|![Error while loading image screenshot](demo/screenshots/xkcd_error_while_loading_image.png)|![Error while loading image gif](demo/gifs/xkcd_error_while_loading_image.gif)|
 
 ## Dependencies
@@ -38,7 +38,7 @@ If that response is successful, that single comic is presented to the user with 
 | Image interactive view  | [photo_view](https://pub.dev/packages/photo_view)  |
 | Internationalization  | [easy_localization](https://pub.dev/packages/easy_localization)  |
 
-## Getting Started
+## How to run the app
 
 ### 1. Get dependencies
 `flutter pub get`
