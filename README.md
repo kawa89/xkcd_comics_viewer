@@ -63,7 +63,7 @@ Debug mode:
 Release mode (not working on emulators, at least the Android ones):
 `flutter run --release`
 
-### Plans for the future:
+## Plans for the future:
 - [ ] Add integration tests (flutter_driver needs to be updated to null-safety). More info: https://flutter.dev/docs/null-safety
 - [ ] Add dark mode
 - [ ] Add favourite feature
