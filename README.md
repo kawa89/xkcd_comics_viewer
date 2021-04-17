@@ -45,7 +45,7 @@ If that response is successful, that single comic is presented to the user with 
 
 ### 2. Prepare all the generated files:
 Generate REST client, test mocks, MobX stores, Hive classes:
-`flutter pub run build_runner build watch --delete-conflicting-outputs`
+`flutter pub run build_runner build --delete-conflicting-outputs`
 
 Generate easy_localization translations
 `flutter pub run easy_localization:generate --source-dir ./assets/translations`
