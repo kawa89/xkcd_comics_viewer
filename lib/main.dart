@@ -33,9 +33,9 @@ class XkcdComicsViewerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
+      theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: Colors.blueGrey[50],
-        accentColor: Colors.grey,
+        accentColor: Colors.grey[700],
         textTheme: GoogleFonts.latoTextTheme(),
       ),
       initialRoute: XkcdComicsViewerApp.splashScreenRoute,

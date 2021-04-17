@@ -2,5 +2,7 @@
   "splash_intro_text": "xkcd comics viewer",
   "error": "Error: {errorMessage}",
   "retry": "Retry",
-  "this_should_never_happen": "Error! This should never happen"
+  "this_should_never_happen": "Error! This should never happen",
+  "something_went_wrong": "Something went wrong.",
+  "something_went_wrong_with_error": "Something went wrong. Error type: {errorType}"
 }
