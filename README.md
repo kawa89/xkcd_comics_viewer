@@ -2,14 +2,9 @@
 
 ## Description
 This Flutter app shows the list of [xkcd comics](https://xkcd.com/).
-The API is not a typical paginated REST service. You can get the latest comic via the [https://xkcd.com/info.0.json](https://xkcd.com/info.0.json ) URL. The
-response will contain the ID of the latest comic. To get previous comics, you need to call https://xkcd.com/{comic_id}/info.0.json, where `{comic_id}` is the ID
- of the comic, lower then the latest comic (for example information about comic #614 will be in [https://xkcd.com/614/info.0.json](https://xkcd.com/614/info.0
-.json)). As you can see, this is not a typical paginated API, so my approach is a bit different then the usual one, when you load 10 next items when you scroll
-close to the end of the list.
+The API is not a typical paginated REST service. You can get the latest comic via the [https://xkcd.com/info.0.json](https://xkcd.com/info.0.json) URL. The response will contain the ID of the latest comic. To get previous comics, you need to call https://xkcd.com/{comic_id}/info.0.json, where `{comic_id}` is the ID of the comic, lower then the latest comic (for example information about comic #614 will be in https://xkcd.com/614/info.0.json). As you can see, this is not a typical paginated API, so my approach is a bit different then the usual one, when you load 10 next items when you scroll close to the end of the list.
 
-The [`HomeScreen`](https://github.com/kawa89/xkcd_comics_viewer/blob/dev/lib/presentation/screens/home/home_screen.dart) widget contains a MobX [`ComicStore`](https://github.com/kawa89/xkcd_comics_viewer/blob/dev/lib/domain/store/comic_store.dart), that loads the latest comic via the [`GetLatestComic`](https://github.com/kawa89/xkcd_comics_viewer/blob/dev/lib/domain/use_cases/get_latest_comic.dart) use case. If the response is successful, a lazy list of comics is
-created, by using a [`ListView.builder`](https://api.flutter.dev/flutter/widgets/ListView/ListView.builder.html) approach. Each item in that list ([`ComicTile`](https://github.com/kawa89/xkcd_comics_viewer/blob/dev/lib/presentation/screens/home/widgets/comic_tile.dart)) has its own independent [`ComicStore`](https://github.com/kawa89/xkcd_comics_viewer/blob/dev/lib/domain/store/comic_store.dart), that tries to load the comic information with a [`GetComicWithId`](https://github.com/kawa89/xkcd_comics_viewer/blob/dev/lib/domain/use_cases/get_comic_with_id.dart) use case.
+The [`HomeScreen`](https://github.com/kawa89/xkcd_comics_viewer/blob/dev/lib/presentation/screens/home/home_screen.dart) widget contains a MobX [`ComicStore`](https://github.com/kawa89/xkcd_comics_viewer/blob/dev/lib/domain/store/comic_store.dart), that loads the latest comic via the [`GetLatestComic`](https://github.com/kawa89/xkcd_comics_viewer/blob/dev/lib/domain/use_cases/get_latest_comic.dart) use case. If the response is successful, a lazy list of comics is created, by using a [`ListView.builder`](https://api.flutter.dev/flutter/widgets/ListView/ListView.builder.html) approach. Each item in that list ([`ComicTile`](https://github.com/kawa89/xkcd_comics_viewer/blob/dev/lib/presentation/screens/home/widgets/comic_tile.dart)) has its own independent [`ComicStore`](https://github.com/kawa89/xkcd_comics_viewer/blob/dev/lib/domain/store/comic_store.dart), that tries to load the comic information with a [`GetComicWithId`](https://github.com/kawa89/xkcd_comics_viewer/blob/dev/lib/domain/use_cases/get_comic_with_id.dart) use case.
 If that response is successful, that single comic is presented to the user with its title and ID. All downloaded comics are stored in a local [Hive](https://pub.dev/packages/hive) database. The [`HomeScreen`](https://github.com/kawa89/xkcd_comics_viewer/blob/dev/lib/presentation/screens/home/home_screen.dart) widget also has a [`RefreshIndicator`](https://api.flutter.dev/flutter/material/RefreshIndicator-class.html) that tries to load the latest [xkcd comic](https://xkcd.com/) from the REST client.
 
 ## Error cases that are supported:
@@ -65,5 +60,6 @@ Release mode (not working on emulators, at least the Android ones):
 
 ## Plans for the future:
 - [ ] Add integration tests (flutter_driver needs to be updated to null-safety). More info: https://flutter.dev/docs/null-safety
+- [ ] Add [lint](https://pub.dev/packages/lint) rules and check code style
 - [ ] Add dark mode
-- [ ] Add favourite feature
+- [ ] Add `favourite comic` feature
