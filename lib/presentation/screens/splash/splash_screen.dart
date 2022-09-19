@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:xkcd_comics_viewer/constants/get_it_instance_names.dart';
 import 'package:xkcd_comics_viewer/constants/hive_box_names.dart';
@@ -50,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen> {
     HiveLocalComicDataSource hiveComicService = HiveLocalComicDataSource(HiveComicToComicMapper(), Hive.box<HiveComic>(HiveBoxNames.XKCD_HIVE_COMIC_BOX));
     DefaultComicsRepository xkcdComicsRepository = DefaultComicsRepository(xkcdRemoteDataSource, hiveComicService);
     GetIt.I.registerSingleton(ComicStore(getComicUseCase: GetLatestComic(xkcdComicsRepository)), instanceName: GetItInstanceNames.XKCD_LATEST_COMIC_STORE);
-    GetIt.I.registerFactoryParam<ComicStore, int, void>((id, _) => ComicStore(getComicUseCase: GetComicWithId(xkcdComicsRepository, id!)));
+    GetIt.I.registerFactoryParam<ComicStore, int, void>((id, _) => ComicStore(getComicUseCase: GetComicWithId(xkcdComicsRepository, id)));
   }
 
   @override

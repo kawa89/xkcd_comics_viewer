@@ -35,8 +35,10 @@ class XkcdComicsViewerApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: Colors.blueGrey[50],
-        accentColor: Colors.grey[700],
         textTheme: GoogleFonts.latoTextTheme(),
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          secondary: Colors.grey[700],
+        ),
       ),
       initialRoute: XkcdComicsViewerApp.splashScreenRoute,
       onGenerateRoute: (settings) {

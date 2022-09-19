@@ -8,6 +8,7 @@
 .buildlog/
 .history
 .svn/
+*.lock
 
 # IntelliJ related
 *.iml
@@ -40,24 +41,6 @@ app.*.symbols
 # Obfuscation related
 app.*.map.json
 
-# Miscellaneous
-*.class
-*.lock
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.buildlog/
-.history
-.svn/
-
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
-
 # Visual Studio Code related
 .classpath
 .project
@@ -87,14 +70,7 @@ analysis_benchmark.json
 .packages.generated
 
 # Flutter/Dart/Pub related
-**/doc/api/
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
 **/generated_plugin_registrant.dart
-.packages
-.pub-cache/
-.pub/
 build/
 flutter_*.png
 linked_*.ds
@@ -129,7 +105,6 @@ unlinked_spec.ds
 **/ios/**/profile
 **/ios/**/xcuserdata
 **/ios/.generated/
-**/ios/Flutter/.last_build_id
 **/ios/Flutter/App.framework
 **/ios/Flutter/Flutter.framework
 **/ios/Flutter/Flutter.podspec
@@ -149,9 +124,6 @@ unlinked_spec.ds
 
 # Coverage
 coverage/
-
-# Symbols
-app.*.symbols
 
 # Exceptions to above rules.
 !**/ios/**/default.mode1v3
